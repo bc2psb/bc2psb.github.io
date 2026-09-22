@@ -1,46 +1,68 @@
 # Internal members, shown in this order.
 # To add someone, copy a block and edit it. Optional fields:
-#   url:   personal or institutional page
-#   photo: file in assets/img/, e.g. photo: jane-doe.jpg
+#   url:      personal or institutional page
+#   scholar:  Google Scholar profile link
+#   linkedin: LinkedIn profile link
+#   photo:    file in assets/img/, e.g. photo: jane-doe.jpg
 
 - name: Davide Secchi
   role: Professor of Management
   interests: Computational cognition, agent-based modeling
+  scholar: https://scholar.google.com/citations?user=xdXGOncAAAAJ
+  linkedin: https://www.linkedin.com/in/davidesecchi/
 
 - name: Andrea Guido
   role: Associate Professor of Management
   interests: Behavioral & experimental economics, decision making
+  scholar: https://scholar.google.com/citations?user=897ZPxIAAAAJ
+  linkedin: https://www.linkedin.com/in/andrea-guido-709583216/
 
 - name: Alexandra Le Chaffotec
   role: Associate Professor of Economics
   interests: Organizational innovation, healthcare
+  scholar: https://scholar.google.com/citations?user=rfHClXkAAAAJ
+  linkedin: https://www.linkedin.com/in/alexandra-le-chaffotec-201573218/
 
 - name: Mickael Melki
   role: Full Professor of Economics
   interests: Political economy, economic history
+  scholar: https://scholar.google.com/citations?user=Zj4H81IAAAAJ
+  linkedin: https://www.linkedin.com/in/mickael-melki-4a9a78135/
 
 - name: Rahman Khan
   role: Associate Professor of Management
   interests: Workplace deviance, AI-driven HRM
+  url: https://www.faculty-psbedu.paris/fr/professors/14250
+  scholar: https://scholar.google.com/citations?user=ULOx94UAAAAJ
+  linkedin: https://www.linkedin.com/in/rahmankhan86/
 
 - name: Masoud Shayganmehr
   role: Associate Professor of Management
   interests: ML, deep learning, Industry 4.0
+  scholar: https://scholar.google.com/citations?user=AoNec3gAAAAJ
 
 - name: Sumayya Shaikh
   role: Assistant Professor of Marketing
   interests: Consumer behavior, sustainability, AI
+  scholar: https://scholar.google.com/citations?user=at_0yd8AAAAJ
+  linkedin: https://www.linkedin.com/in/sumayya/
 
 - name: Nada Rejeb
   role: Associate Professor of Management
   interests: Entrepreneurship, innovation, family firm strategy
   url: https://www.faculty-psbedu.paris/professors/12755
+  scholar: https://scholar.google.com/citations?user=069xN3kAAAAJ
+  linkedin: https://www.linkedin.com/in/nada-rejeb-14b6937/
 
 - name: Humaira-Kamal Pasha
   role: Associate Professor of Economics
   interests: Development economics, gender, climate change, human capital
   url: https://www.faculty-psbedu.paris/professors/12245
+  scholar: https://scholar.google.com/citations?user=DHfVzhMAAAAJ
+  linkedin: https://www.linkedin.com/in/humaira-kamal-pasha-99349685/
 
 - name: Ekaterina Besson
   role: Associate Professor of Management
   interests: Collaborative entrepreneurship, process innovation, team integration
+  scholar: https://scholar.google.com/citations?user=1JD2PwQAAAAJ
+  linkedin: https://www.linkedin.com/in/ekaterina-besson-ph-d-414b1a6/
