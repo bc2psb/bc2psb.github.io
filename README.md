@@ -20,11 +20,11 @@ To add a member, copy an existing block in `members.yml` and change it. To add a
 
 YAML tip: keep the indentation exactly as it is in the surrounding entries (spaces, not tabs). If a line contains a colon followed by a space (`: `), wrap the text in quotes.
 
-## Publishing (one-time setup)
+## Publishing
 
-1. Create a GitHub repository named `bc2` and upload these files.
-2. Go to **Settings → Pages**, set **Source** to *Deploy from a branch*, then choose `main` and `/ (root)`.
-3. The site appears at `https://<account>.github.io/bc2/`.
+The site is live at https://bc2psb.github.io/, built from the `main` branch of
+[bc2psb/bc2psb.github.io](https://github.com/bc2psb/bc2psb.github.io) (Settings → Pages).
+To give a colleague edit access, add them to the `bc2psb` organization on GitHub.
 
 ## Page layout
 
