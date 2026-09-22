@@ -1,0 +1,13 @@
+# External affiliates.
+# "count" and "companies" are shown while "people" is empty. Once you list people, they are shown instead.
+count: 26
+companies: 1
+countries: [France, UK, Germany, Italy, USA, Netherlands, Estonia, Turkey, Denmark, Portugal]
+
+people: []
+# Example:
+# people:
+#   - name: Jane Doe
+#     affiliation: University of Somewhere
+#     country: UK
+#     url: https://example.org

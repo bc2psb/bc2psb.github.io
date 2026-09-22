@@ -1,0 +1,15 @@
+# Site-wide settings. Page content lives in the _data/ folder.
+title: "BC²"
+subtitle: "Behavior, Cognition & Complexity"
+description: "BC² at Paris School of Business connects micro, meso and macro perspectives on behavior in complex social and economic systems."
+institution: "Paris School of Business"
+
+# Shown in the Contact section and footer. Leave empty ("") to hide.
+contact_email: ""
+
+# GitHub Pages sets the base URL automatically.
+# Only set this if you use a custom domain or preview locally, e.g. baseurl: "/bc2"
+# baseurl: ""
+
+exclude:
+  - README.md

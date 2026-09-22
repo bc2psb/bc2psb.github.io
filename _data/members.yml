@@ -1,0 +1,32 @@
+# Internal members, shown in this order.
+# To add someone, copy a block and edit it. Optional fields:
+#   url:   personal or institutional page
+#   photo: file in assets/img/, e.g. photo: jane-doe.jpg
+
+- name: Davide Secchi
+  role: Professor of Management
+  interests: Computational cognition, agent-based modeling
+
+- name: Andrea Guido
+  role: Associate Professor of Management
+  interests: Behavioral & experimental economics, decision making
+
+- name: Alexandra Le Chaffotec
+  role: Associate Professor of Economics
+  interests: Organizational innovation, healthcare
+
+- name: Mickael Melki
+  role: Full Professor of Economics
+  interests: Political economy, economic history
+
+- name: Rahman Khan
+  role: Associate Professor of Management
+  interests: Workplace deviance, AI-driven HRM
+
+- name: Masoud Shayganmehr
+  role: Associate Professor of Management
+  interests: ML, deep learning, Industry 4.0
+
+- name: Sumayya Shaikh
+  role: Assistant Professor of Marketing
+  interests: Consumer behavior, sustainability, AI

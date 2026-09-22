@@ -1,0 +1,17 @@
+# Text for the top of the page.
+tagline: "Paris School of Business"
+
+goal: >-
+  We connect macro, meso and micro perspectives to understand how individuals
+  think and behave in complex social and economic systems.
+
+methods: >-
+  Computational simulation, machine learning, survey-based and experimental methods.
+
+levels:
+  - name: Micro
+    text: Individual cognition & decision-making
+  - name: Meso
+    text: Teams, groups & organizations
+  - name: Macro
+    text: Institutions & societal dynamics

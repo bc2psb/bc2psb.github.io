@@ -1,0 +1,145 @@
+---
+layout: default
+---
+{% assign about = site.data.about %}
+{% assign aff = site.data.affiliates %}
+
+<!-- Intro -->
+<section id="about" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{{ about.tagline }}</p>
+      <h1>{{ site.title }}</h1>
+      <p class="hero-sub">{{ site.subtitle }}</p>
+      <p class="lead">{{ about.goal }}</p>
+      <p class="methods"><strong>Methods</strong> {{ about.methods }}</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#team">Meet the team</a>
+        <a class="btn btn-ghost" href="#activities">Our activities</a>
+      </div>
+    </div>
+
+    <!-- Micro / meso / macro graphic, drawn from _data/about.yml -->
+    <svg class="orbits" viewBox="0 0 400 400" role="img" aria-label="Micro, meso and macro levels as nested circles">
+      {% for level in about.levels reversed %}
+      {% assign i = about.levels.size | minus: forloop.index | plus: 1 %}
+      {% assign r = i | times: 60 %}
+      <circle class="ring ring-{{ i }}" cx="200" cy="200" r="{{ r }}"/>
+      <g class="spin spin-{{ i }}"><circle class="dot" cx="200" cy="{{ 200 | minus: r }}" r="5"/></g>
+      <text x="200" y="{{ 200 | minus: r | plus: 26 }}">{{ level.name }}</text>
+      {% endfor %}
+    </svg>
+  </div>
+</section>
+
+<!-- Research levels -->
+<section class="levels">
+  <div class="wrap levels-grid">
+    {% for level in about.levels %}
+    <article class="card level">
+      <span class="num">0{{ forloop.index }}</span>
+      <h3>{{ level.name }}</h3>
+      <p>{{ level.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Key figures (update automatically from the data files) -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div><strong>{{ site.data.members.size }}</strong><span>internal members</span></div>
+    <div><strong>{% if aff.people.size > 0 %}{{ aff.people.size }}{% else %}{{ aff.count }}{% endif %}</strong><span>international affiliates</span></div>
+    <div><strong>{{ aff.countries.size }}</strong><span>countries</span></div>
+    <div><strong>{{ site.data.projects.size }}</strong><span>funded projects</span></div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team">
+  <div class="wrap">
+    <p class="eyebrow">People</p>
+    <h2>Team</h2>
+    <div class="people">
+      {% for m in site.data.members %}
+      {% assign dept = m.role | split: " of " | last %}
+      {% assign parts = m.name | split: " " %}
+      <article class="card person dept-{{ dept | downcase }}">
+        {% if m.photo %}
+        <img class="avatar" src="{{ '/assets/img/' | append: m.photo | relative_url }}" alt="">
+        {% else %}
+        <span class="avatar" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+        {% endif %}
+        <div>
+          <h3>{% if m.url %}<a href="{{ m.url }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}</h3>
+          <p class="role">{{ m.role }}</p>
+          <p>{{ m.interests }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="affiliates card">
+      <div class="aff-head">
+        <h3>International affiliates</h3>
+        {% if aff.people.size == 0 %}
+        <p><strong>{{ aff.count }}</strong> researchers{% if aff.companies > 0 %} and <strong>{{ aff.companies }}</strong> company partner{% if aff.companies > 1 %}s{% endif %}{% endif %}</p>
+        {% endif %}
+      </div>
+      {% if aff.people.size > 0 %}
+      <ul class="aff-list">
+        {% for p in aff.people %}
+        <li>{% if p.url %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}<span>{{ p.affiliation }}{% if p.country %}, {{ p.country }}{% endif %}</span></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <ul class="chips">
+        {% for c in aff.countries %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Activities -->
+<section id="activities" class="tinted">
+  <div class="wrap">
+    <p class="eyebrow">What we do</p>
+    <h2>Activities</h2>
+    <div class="grid-2">
+      {% for a in site.data.activities %}
+      <article class="card activity">
+        <span class="num">0{{ forloop.index }}</span>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Funding</p>
+    <h2>Funded projects</h2>
+    <div class="grid-2">
+      {% for p in site.data.projects %}
+      <article class="card project">
+        <p class="funder">{{ p.funder }}</p>
+        <h3>{% if p.url %}<a href="{{ p.url }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+        <p>{{ p.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if site.contact_email != "" %}
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>Interested in collaborating or joining our events?</p>
+    <a class="btn btn-primary" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+  </div>
+</section>
+{% endif %}
