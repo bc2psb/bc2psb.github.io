@@ -93,25 +93,6 @@ layout: default
       {% endfor %}
     </div>
     <div class="car-dots" id="people-dots"></div>
-
-    <div class="affiliates card">
-      <div class="aff-head">
-        <h3>International affiliates</h3>
-        {% if aff.people.size == 0 %}
-        <p><strong>{{ aff.count }}</strong> researchers{% if aff.companies > 0 %} and <strong>{{ aff.companies }}</strong> company partner{% if aff.companies > 1 %}s{% endif %}{% endif %}</p>
-        {% endif %}
-      </div>
-      {% if aff.people.size > 0 %}
-      <ul class="aff-list">
-        {% for p in aff.people %}
-        <li>{% if p.url %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}<span>{{ p.affiliation }}{% if p.country %}, {{ p.country }}{% endif %}</span></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-      <ul class="chips">
-        {% for c in aff.countries %}<li>{{ c }}</li>{% endfor %}
-      </ul>
-    </div>
   </div>
 </section>
 
