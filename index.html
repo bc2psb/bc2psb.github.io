@@ -124,8 +124,8 @@ layout: default
 </section>
 
 <!-- Seminars (hidden while _data/seminars.yml is empty) -->
+{% if site.data.seminars.size > 0 %}
 {% assign talks = site.data.seminars | sort: "date" %}
-{% if talks.size > 0 %}
 {% assign today = site.time | date: "%Y-%m-%d" %}
 {% assign n_upcoming = 0 %}
 {% for t in talks %}{% assign d = t.date | date: "%Y-%m-%d" %}{% if d >= today %}{% assign n_upcoming = n_upcoming | plus: 1 %}{% endif %}{% endfor %}

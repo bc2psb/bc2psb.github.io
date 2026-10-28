@@ -5,6 +5,7 @@
   <div>
     <h3>{{ t.title }}</h3>
     <p class="speaker">{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}{% if t.affiliation %}<span>{{ t.affiliation }}</span>{% endif %}</p>
+    {% if t.coauthors %}<p class="coauthors">Joint work with {{ t.coauthors }}</p>{% endif %}
     {% if t.abstract %}
     <details>
       <summary>Abstract</summary>

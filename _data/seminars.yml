@@ -1,6 +1,6 @@
 # Seminar talks. The Seminars section stays hidden until this list has an entry.
 # Talks sort themselves into "Upcoming" and "Past" by date, so you never need to move them.
-# Required: date (YYYY-MM-DD), speaker, title. Optional: affiliation, url (speaker's page), abstract.
+# Required: date (YYYY-MM-DD), speaker, title. Optional: affiliation, url (speaker's page), coauthors, abstract.
 # For a long abstract, start it with ">" and indent the text on the following lines, as in the example.
 # To add a talk, copy the example below, remove the "# " at the start of each line, and fill it in.
 
@@ -9,6 +9,24 @@
 #   affiliation: University of Somewhere
 #   url: https://example.org
 #   title: "Beliefs, narratives and climate policy"
+#   coauthors: John Smith and Ann Lee
 #   abstract: >
 #     One or two paragraphs describing the talk.
 #     The text can run over several lines.
+
+- date: 2026-11-24
+  speaker: Alejandro Martínez-Marquina
+  affiliation: University of Southern California
+  url: https://sites.google.com/view/amartinezmarquina/home
+  title: The Backlash Against Gender Quotas
+  coauthors: Juan B. Gonzalez
+  abstract: >
+    Gender quotas are used to address gender disparities, but they may trigger
+    backlash that undermines their effectiveness. In an online hiring experiment,
+    requiring recruiters to hire a female candidate for one position leads them to
+    penalize women in other, uncovered positions, offering lower salaries and making
+    them twice as likely to receive no offer. No such effect arises when quotas mandate
+    hiring men. Backlash emerges among supporters and opponents of equity policies, and
+    renders the quota policy ineffective. Under the quota, women are evaluated jointly
+    with quota beneficiaries, unintentionally raising the bar for the group the policy
+    aims to promote.

@@ -205,6 +205,7 @@ nav a:hover { color: var(--accent); text-decoration: none; }
 .speaker { font-size: .92rem; font-weight: 500; }
 .speaker span { color: var(--muted); font-weight: 400; }
 .speaker span::before { content: " · "; }
+.coauthors { color: var(--muted); font-size: .85rem; font-style: italic; margin: .15rem 0 0; }
 .talk details { margin-top: .6rem; font-size: .92rem; }
 .talk summary { cursor: pointer; color: var(--accent); font-weight: 500; }
 .talk details p { color: var(--muted); margin-top: .5rem; }
