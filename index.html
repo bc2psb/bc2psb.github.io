@@ -123,8 +123,47 @@ layout: default
   </div>
 </section>
 
+<!-- Seminars (hidden while _data/seminars.yml is empty) -->
+{% assign talks = site.data.seminars | sort: "date" %}
+{% if talks.size > 0 %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign n_upcoming = 0 %}
+{% for t in talks %}{% assign d = t.date | date: "%Y-%m-%d" %}{% if d >= today %}{% assign n_upcoming = n_upcoming | plus: 1 %}{% endif %}{% endfor %}
+<section id="seminars">
+  <div class="wrap">
+    <p class="eyebrow">Talks</p>
+    <h2>Seminars</h2>
+
+    <h3 class="talks-head">Upcoming</h3>
+    <p class="talks-none" id="talks-none"{% if n_upcoming > 0 %} hidden{% endif %}>No upcoming talks scheduled. Check back soon.</p>
+    <ul class="talks" id="talks-upcoming">
+      {% for t in talks %}{% assign d = t.date | date: "%Y-%m-%d" %}{% if d >= today %}{% include talk.html talk=t %}{% endif %}{% endfor %}
+    </ul>
+
+    <h3 class="talks-head" id="talks-past-head"{% if n_upcoming == talks.size %} hidden{% endif %}>Past</h3>
+    <ul class="talks" id="talks-past">
+      {% for t in talks reversed %}{% assign d = t.date | date: "%Y-%m-%d" %}{% if d < today %}{% include talk.html talk=t %}{% endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<script>
+  // The upcoming/past split is made when the site is built; move talks that have passed since then.
+  (function () {
+    var up = document.getElementById("talks-upcoming"), past = document.getElementById("talks-past");
+    var now = new Date(), pad = function (x) { return (x < 10 ? "0" : "") + x; };
+    var today = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+    Array.prototype.slice.call(up.children).forEach(function (li) {
+      if (li.getAttribute("data-date") < today) past.insertBefore(li, past.firstChild);
+    });
+    document.getElementById("talks-none").hidden = up.children.length > 0;
+    document.getElementById("talks-past-head").hidden = past.children.length === 0;
+  })();
+</script>
+{% endif %}
+
 <!-- Projects -->
-<section id="projects">
+<section id="projects" class="tinted">
   <div class="wrap">
     <p class="eyebrow">Funding</p>
     <h2>Funded projects</h2>

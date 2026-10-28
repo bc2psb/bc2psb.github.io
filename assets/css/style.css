@@ -194,6 +194,22 @@ nav a:hover { color: var(--accent); text-decoration: none; }
 .activity p, .project p { color: var(--muted); }
 .funder { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent) !important; margin-bottom: .35rem; }
 
+/* ---------- Seminars ---------- */
+.talks-head { font-size: 1.25rem; margin-bottom: 1rem; }
+.talks { list-style: none; padding: 0; margin: 0 0 2.5rem; display: grid; gap: 1rem; }
+.talks:last-child { margin-bottom: 0; }
+.talks-none { color: var(--muted); margin-bottom: 2.5rem; }
+.talk { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem; }
+.talk time { font-family: var(--serif); font-weight: 600; color: var(--accent); }
+.talk h3 { margin-bottom: .35rem; }
+.speaker { font-size: .92rem; font-weight: 500; }
+.speaker span { color: var(--muted); font-weight: 400; }
+.speaker span::before { content: " · "; }
+.talk details { margin-top: .6rem; font-size: .92rem; }
+.talk summary { cursor: pointer; color: var(--accent); font-weight: 500; }
+.talk details p { color: var(--muted); margin-top: .5rem; }
+#talks-past .talk h3 { font-size: 1rem; }
+
 /* ---------- Contact & footer ---------- */
 .contact { background: var(--soft); text-align: center; }
 .contact h2 { margin-bottom: .6rem; }
@@ -210,6 +226,7 @@ nav a:hover { color: var(--accent); text-decoration: none; }
   .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
   .orbits { max-width: 260px; }
   .levels-grid, .grid-2 { grid-template-columns: 1fr; }
+  .talk { grid-template-columns: 1fr; gap: .3rem; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .brand span { display: none; }
   nav { gap: 1rem; }

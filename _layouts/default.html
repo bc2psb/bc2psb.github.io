@@ -21,6 +21,7 @@
       <nav>
         <a href="#team">Team</a>
         <a href="#activities">Activities</a>
+        {% if site.data.seminars.size > 0 %}<a href="#seminars">Seminars</a>{% endif %}
         <a href="#projects">Projects</a>
         {% if site.contact_email != "" %}<a href="#contact">Contact</a>{% endif %}
         <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode" onclick="toggleTheme()">

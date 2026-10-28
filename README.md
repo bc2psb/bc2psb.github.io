@@ -12,11 +12,14 @@ All content is in `_data/`. You can edit the files directly on github.com (open 
 | Members                        | `_data/members.yml`       |
 | External affiliates            | `_data/affiliates.yml`    |
 | Activities                     | `_data/activities.yml`    |
+| Seminar talks                  | `_data/seminars.yml`      |
 | Funded projects                | `_data/projects.yml`      |
 | Site title, contact email      | `_config.yml`             |
 | Colors and fonts               | `assets/css/style.css`    |
 
 To add a member, copy an existing block in `members.yml` and change it. To add a photo, upload it to `assets/img/` and add `photo: filename.jpg` to that person's block.
+
+To add a seminar, follow the commented example in `seminars.yml`. Talks are sorted into "Upcoming" and "Past" by date automatically; the Seminars section and its menu link only appear once the file has at least one talk.
 
 YAML tip: keep the indentation exactly as it is in the surrounding entries (spaces, not tabs). If a line contains a colon followed by a space (`: `), wrap the text in quotes.
 
@@ -30,3 +33,4 @@ To give a colleague edit access, add them to the `bc2psb` organization on GitHub
 
 - `index.html`: the single page, which reads everything from `_data/`
 - `_layouts/default.html`: the header, navigation and footer
+- `_includes/talk.html`: how a single seminar talk is displayed
