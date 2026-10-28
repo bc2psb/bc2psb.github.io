@@ -58,9 +58,17 @@ layout: default
 <!-- Team -->
 <section id="team">
   <div class="wrap">
-    <p class="eyebrow">People</p>
-    <h2>Team</h2>
-    <div class="people">
+    <div class="team-head">
+      <div>
+        <p class="eyebrow">People</p>
+        <h2>Team</h2>
+      </div>
+      <div class="car-nav">
+        <button class="car-btn" id="people-prev" type="button" aria-label="Previous members"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="car-btn" id="people-next" type="button" aria-label="Next members"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+    <div class="people" id="people" tabindex="0" aria-label="Team members">
       {% for m in site.data.members %}
       {% assign dept = m.role | split: " of " | last %}
       {% assign parts = m.name | split: " " %}
@@ -84,6 +92,7 @@ layout: default
       </article>
       {% endfor %}
     </div>
+    <div class="car-dots" id="people-dots"></div>
 
     <div class="affiliates card">
       <div class="aff-head">
@@ -105,6 +114,51 @@ layout: default
     </div>
   </div>
 </section>
+
+<script>
+  // Team carousel: the arrows move by one screenful of cards; the dots show and jump to each screenful.
+  (function () {
+    var track = document.getElementById("people"), dots = document.getElementById("people-dots"),
+        prev = document.getElementById("people-prev"), next = document.getElementById("people-next");
+    var cards = track.children, step = 0, pages = 1;
+    document.querySelector(".team-head").classList.add("ready");
+
+    function measure() {
+      var stride = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth;
+      step = Math.max(stride, Math.floor((track.clientWidth + 1) / stride) * stride);
+      var max = track.scrollWidth - track.clientWidth;
+      pages = max > 1 ? Math.ceil(max / step) + 1 : 1;
+      dots.innerHTML = "";
+      for (var i = 0; i < pages; i++) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Show members, page " + (i + 1) + " of " + pages);
+        b.onclick = (function (p) { return function () { track.scrollTo({ left: p * step, behavior: "smooth" }); }; })(i);
+        dots.appendChild(b);
+      }
+      update();
+    }
+
+    function update() {
+      var max = track.scrollWidth - track.clientWidth, x = track.scrollLeft;
+      var current = x >= max - 1 ? pages - 1 : Math.round(x / step);
+      for (var i = 0; i < dots.children.length; i++) dots.children[i].classList.toggle("on", i === current);
+      prev.disabled = x <= 1;
+      next.disabled = x >= max - 1;
+      document.querySelector(".team-head").classList.toggle("ready", pages > 1);
+      dots.hidden = pages < 2;
+    }
+
+    prev.onclick = function () { track.scrollBy({ left: -step, behavior: "smooth" }); };
+    next.onclick = function () { track.scrollBy({ left: step, behavior: "smooth" }); };
+    var ticking = false;
+    track.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; update(); }); }
+    });
+    window.addEventListener("resize", measure);
+    measure();
+  })();
+</script>
 
 <!-- Activities -->
 <section id="activities" class="tinted">
