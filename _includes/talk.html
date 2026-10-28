@@ -1,9 +1,9 @@
 {% assign t = include.talk %}
 {% assign d = t.date | date: "%Y-%m-%d" %}
 <li class="card talk" data-date="{{ d }}">
-  <time datetime="{{ d }}">{{ t.date | date: "%-d %b %Y" }}</time>
+  {% if t.date %}<time class="when" datetime="{{ d }}">{{ t.date | date: "%-d %b %Y" }}</time>{% else %}<span class="when">Date TBA</span>{% endif %}
   <div>
-    <h3>{{ t.title }}</h3>
+    <h3>{{ t.title | default: "Title TBA" }}</h3>
     <p class="speaker">{% if t.url %}<a href="{{ t.url }}">{{ t.speaker }}</a>{% else %}{{ t.speaker }}{% endif %}{% if t.affiliation %}<span>{{ t.affiliation }}</span>{% endif %}</p>
     {% if t.coauthors %}<p class="coauthors">Joint work with {{ t.coauthors }}</p>{% endif %}
     {% if t.abstract %}

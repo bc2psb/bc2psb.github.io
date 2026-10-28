@@ -230,7 +230,7 @@ nav a:hover { color: var(--accent); text-decoration: none; }
 .talks:last-child { margin-bottom: 0; }
 .talks-none { color: var(--muted); margin-bottom: 2.5rem; }
 .talk { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1.25rem; }
-.talk time { font-family: var(--serif); font-weight: 600; color: var(--accent); }
+.talk .when { font-family: var(--serif); font-weight: 600; color: var(--accent); }
 .talk h3 { margin-bottom: .35rem; }
 .speaker { font-size: .92rem; font-weight: 500; }
 .speaker span { color: var(--muted); font-weight: 400; }

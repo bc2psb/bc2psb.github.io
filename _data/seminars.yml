@@ -1,6 +1,7 @@
 # Seminar talks. The Seminars section stays hidden until this list has an entry.
 # Talks sort themselves into "Upcoming" and "Past" by date, so you never need to move them.
-# Required: date (YYYY-MM-DD), speaker, title. Optional: affiliation, url (speaker's page), coauthors, abstract.
+# Required: speaker. Usual: date (YYYY-MM-DD), title. Optional: affiliation, url (speaker's page), coauthors, abstract.
+# Leave out the date or title while unknown: the talk then shows "Date TBA" / "Title TBA" at the end of Upcoming.
 # For a long abstract, start it with ">" and indent the text on the following lines, as in the example.
 # To add a talk, copy the example below, remove the "# " at the start of each line, and fill it in.
 
@@ -30,3 +31,5 @@
     renders the quota policy ineffective. Under the quota, women are evaluated jointly
     with quota beneficiaries, unintentionally raising the bar for the group the policy
     aims to promote.
+
+- speaker: Darina Butalova
